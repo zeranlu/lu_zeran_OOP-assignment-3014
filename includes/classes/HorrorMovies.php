@@ -4,11 +4,11 @@ namespace Filmography;
 
 class HorrorMovies
 {
-    $title = '';
-    $franchise = '';
-    $installments = '';
-    $director = '';
-    $villain = '';
+    public $title = '';
+    public $franchise = '';
+    public $installments = '';
+    public $director = '';
+    public $villain = '';
 
     public function getDirector()
     {
@@ -20,7 +20,7 @@ class HorrorMovies
         return $this->title . 'is apart of the franchise: ' . $this->franchise . ', and it has ' . $this->installments . ' installments!';
     }
 
-    public function getKiller()
+    public function getVillain()
     {
         return 'You might recognize ' . $this->villain . ' from ' . $this->title . 'They have appeared in films made by these directors: ' . $this->director . '.';
     }
