@@ -13,3 +13,12 @@ spl_autoload_register(function ($class) {
 
 // TESTING AUTOLOAD
 
+// $slasher = new Filmography\Slasher();
+// $slasher->title = 'Scream';
+// echo $slasher->title;
+
+// $alien = new Filmography\Extraterrestrial();
+// $alien->title = 'Alien';
+// $alien->director = 'Ridley Scott';
+// echo $alien->title . ' directed by ' . $alien->director;
+
