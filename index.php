@@ -22,3 +22,23 @@ spl_autoload_register(function ($class) {
 // $alien->director = 'Ridley Scott';
 // echo $alien->title . ' directed by ' . $alien->director;
 
+// HIERARCHY EXAMPLES:
+
+// defining variables at the level 1 (HorrorMovies.php)
+$slasher = new Filmography\Slasher();
+$slasher->title = 'Scream';
+$slasher->director = 'Wes Craven';
+$slasher->franchise = 'Scream Franchise';
+$slasher->installments = '7';
+$slasher->villain = 'Ghostface';
+
+echo
+    // functions exists in HorroMovies.php
+    $slasher->getDescription()
+    .$slasher->getVillain()
+    // function exists under the PersonalFavourite.php trait file
+    .$slasher->getRating()
+    // functions exist in the Slasher.php (genre) class
+    .$slasher->getIconDescription()
+    .$slasher->getKillerWarning();
+
