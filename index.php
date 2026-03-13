@@ -13,6 +13,7 @@ spl_autoload_register(function ($class) {
 
 // HIERARCHY EXAMPLES:
 
+// Scream Variables
 // defining variables at the level 1 (HorrorMovies.php)
 $slasher = new Filmography\Slasher();
 $slasher->title = 'Scream';
@@ -38,6 +39,18 @@ $slasher->recommendation = 'Happy Death Day';
 //     .$slasher->getIconDescription()
 //     .$slasher->getKillerWarning();
 
+
+
+// REC. Variables
+$rec = new Filmography\REC();
+$rec->title = 'REC.';
+$rec->director = 'Jaume Balagueró';
+$rec->franchise = 'REC. franchise';
+$rec->installments = '4';
+$rec->reason = 'this movie combines multiple genres/subgenres of horror movies into one unexpectedly awesome narrative.';
+$rec->recommendation = 'Gonjiam: Haunted Asylum';
+$rec->perspective = 'First person perspective';
+$rec->footageMedium = 'lost and recovered news recordings';
 ?>
 
 <!DOCTYPE html>
@@ -84,7 +97,34 @@ $slasher->recommendation = 'Happy Death Day';
             </p>
         </div>
 
+        <div id="rec-con">
+            <h2>REC.</h2>
 
+            <h3>These are methods of HorrorMovies.php</h3>
+            <p>
+                <?php echo $rec->getDescription();?>
+            </p>
+
+            <h3>These are methods of my trait PersonalFavourite.php</h3>
+
+            <p>
+                <?php echo $rec->getReason();?>
+            </p>
+
+            <h3>These are methods of my trait other trait: FoundFootage.php</h3>
+            <p>
+                <?php echo $rec->getPointOfInterest();?>
+            </p>
+
+            <h3>These are methods of my subclass Zombie.php</h3>
+            <p>
+                <?php echo $rec->getHistory();?>
+            </p>
+
+            <p>
+                <?php echo $rec->getZombieWarning();?>
+            </p>
+        </div>
     </main>
 </body>
 </html>
