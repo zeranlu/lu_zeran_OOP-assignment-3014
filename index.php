@@ -1,14 +1,15 @@
 <?php
 
-use Filmography\HorrorMovies;
+spl_autoload_register(function ($class) {
+    $class = str_replace('Filmography\\', '', $class);
+    $class = str_replace("\\", DIRECTORY_SEPARATOR, $class);
+    $filepath = __DIR__ . '/includes/classes/' . $class . '.php';
+    $filepath = str_replace("/", DIRECTORY_SEPARATOR, $filepath);
 
-$title = 'something';
+    if (file_exists($filepath)) {
+        require_once $filepath;
+    }
+});
 
-$movie1 = new HorrorMovies();
-$movie1->title = 'something';
-
-$movie2 = new HorrorMovies;
-$movie2->title = 'something else';
-
-$title = 'something else';
+// TESTING AUTOLOAD
 
